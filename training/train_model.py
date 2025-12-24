@@ -9,10 +9,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.ensemble import RandomForestRegressor
-from app.training.train_utils import DATA_FILE_PATH,MODEL_DIR,MODEL_PATH
+from training.train_utils import DATA_FILE_PATH,MODEL_DIR,MODEL_PATH
 
 
-data = pd.read_csv('app/data/car_price_prediction.csv').drop_duplicates().drop(['ID','Model'],axis=1)
+data = pd.read_csv('data/car_price_prediction.csv').drop_duplicates().drop(['ID','Model'],axis=1)
 
 data = data.rename(columns={'Prod. year':'Year',
                             'Engine volume':'EngineVolume',
