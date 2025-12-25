@@ -12,7 +12,7 @@ class CarFeature(BaseModel):
     Manufacturer:str
     LeatherInterior : str 
     FuelType : str 
-    EngineVolume : float 
+    EngineVolume : str
     Mileage : int
     Cylinders : float
     GearBoxType : str 
