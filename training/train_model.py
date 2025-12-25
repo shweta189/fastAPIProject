@@ -22,6 +22,8 @@ data = data.rename(columns={'Prod. year':'Year',
                              'Drive wheels':'DriveWheels',
                              })
 
+print(data['LeatherInterior'])
+
 data['Levy'] = data['Levy'].replace({'-':np.nan}).astype(float)
 data['LeatherInterior'] = data['LeatherInterior'].replace({'Yes':True,'No':False})
 data['Mileage'] = data['Mileage'].str.extract(r'([\d.]+)').astype(int)
@@ -35,13 +37,14 @@ num_feat = ['Levy', 'Year','EngineVolume', 'Mileage', 'Cylinders', 'Doors', 'Air
 cat_feat = ['Manufacturer', 'LeatherInterior','Category', 'FuelType', 'GearBoxType',
        'DriveWheels', 'Wheel', 'Color','Turbo']
 
-for col in cat_feat:
-    data = data[col].lower()
+
+data[cat_feat] = data[cat_feat].apply(lambda col: col.str.lower())
 
 num_pipeline = Pipeline([
     ('imputer',SimpleImputer(strategy='median')),
     ('std_scaler',StandardScaler())
 ])
+
 
 pipeline = ColumnTransformer([
     ('num',num_pipeline,num_feat),
