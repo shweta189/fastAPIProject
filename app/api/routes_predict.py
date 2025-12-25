@@ -21,9 +21,6 @@ class CarFeature(BaseModel):
     Wheel : str 
     Color : str 
     Airbags : int              
-num_feat = ['Levy', 'Prod. year','Engine volume', 'Mileage', 'Cylinders', 'Doors', 'Airbags']
-cat_feat = ['Manufacturer', 'Leather interior','Category', 'Fuel type', 'Gear box type',
-       'Drive wheels', 'Wheel', 'Color','Turbo']
 @router.post('/predict')
 def predict_price(car_feat:CarFeature,user=Depends(get_current_user), _ = Depends(get_api_key)):
     predicted_price = predict_car_price(car_feat.model_dump())
