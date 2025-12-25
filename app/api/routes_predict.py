@@ -12,7 +12,7 @@ class CarFeature(BaseModel):
     Manufacturer:str
     LeatherInterior : str 
     FuelType : str 
-    EngineVolume : str
+    EngineVolume : int
     Mileage : int
     Cylinders : float
     GearBoxType : str 
@@ -20,6 +20,7 @@ class CarFeature(BaseModel):
     Doors : int
     Wheel : str 
     Color : str 
+    Turbo: str
     Airbags : int              
 @router.post('/predict')
 def predict_price(car_feat:CarFeature,user=Depends(get_current_user), _ = Depends(get_api_key)):
