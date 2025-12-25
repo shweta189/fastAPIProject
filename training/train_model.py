@@ -35,7 +35,8 @@ num_feat = ['Levy', 'Year','EngineVolume', 'Mileage', 'Cylinders', 'Doors', 'Air
 cat_feat = ['Manufacturer', 'LeatherInterior','Category', 'FuelType', 'GearBoxType',
        'DriveWheels', 'Wheel', 'Color','Turbo']
 
-
+for col in cat_feat:
+    data = data[col].lower()
 
 num_pipeline = Pipeline([
     ('imputer',SimpleImputer(strategy='median')),
