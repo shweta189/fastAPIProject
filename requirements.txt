@@ -1,13 +1,11 @@
-fastapi==0.123.8
-uvicorn==0.38.0
+fastapi
+uvicorn
 
-python-jose==3.5.0
-python-dotenv==1.2.1
-
-scikit-learn==1.7.2
+python-jose
+python-dotenv
+scikit-learn
 joblib
-pandas==2.3.3
-numpy==2.3.5
-redis==7.1.0
-
-prometheus-fastapi-instrumentator==7.1.0
+pandas
+numpy
+redis
+prometheus-fastapi-instrumentator
