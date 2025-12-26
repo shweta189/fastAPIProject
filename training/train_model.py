@@ -63,7 +63,7 @@ pipeline = ColumnTransformer([
 y = data['price']
 X_train,X_test,y_train,y_test = train_test_split(data,y,test_size=0.3,random_state=42)
 
-rf_reg = RandomForestRegressor(max_features=33, n_estimators=200, random_state=42)
+rf_reg = RandomForestRegressor(max_features=35, n_estimators=200, random_state=42)
 rf_model = Pipeline(steps=[
     ('pipe',pipeline),
     ('rf_reg',rf_reg)
